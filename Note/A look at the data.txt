@@ -1,0 +1,8 @@
+pd.read_csv() #read csv
+df.shape[0] #row num of dataset
+df.shape[1] #col num of a dataset
+df.isnull() #check any data is null or not OUTPUT=True or False
+df.columns[condition(T or F)]  
+df.columns[df.isnull().mean()==0] #Mean gives a null.num/total.num, if mean=0, means this column has no null.
+df.colname=df["colname"]
+df.colname.value_counts() #give a series that the number of each value.每个value出现的次数
