@@ -1,0 +1,4 @@
+seaborn.heatmap(annot=, fmt='.2f') #heatmap,annot在格子上加数字, fmt='.2f' 2decimals 
+https://seaborn.pydata.org/generated/seaborn.heatmap.html
+
+df.describe(include=) #default=numeric,if include='all', it will include both numeric and all column. 

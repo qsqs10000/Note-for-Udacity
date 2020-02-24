@@ -1,0 +1,3 @@
+list(df[df['column'==sth]]['column2'])[0]  #select the value of column2 when column==sth(string)
+df.reset_index() #把原来的index变成一个data column，创建一个新的index 0-
+df.rename(columns={a:b,c:d},inplace=)

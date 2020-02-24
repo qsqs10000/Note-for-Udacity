@@ -1,0 +1,25 @@
+Linux
+1.mkdir web_app(create a directory called web_app)
+2.mv -t web_app data worldbankapp wrangling_scripts worldbank.py(move all the files to the dicrectory)
+3.conda update python (create a virtual env)
+python3 -m venv worldbankvenv
+source worldbankenv/bin/activate
+4.pip install flask pandas plotly gunicorn
+curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+https://devcenter.heroku.com/articles/heroku-cli#standalone-installation
+heroku —-version
+5.heroku login
+
+------------------------------------------------------------set up------------
+
+
+
+
+
+
+1.touch procile -> procfile:web gunicore name:app (run this app when starting this webapp)
+2.pip freeze ->check all the packages
+3.pip freeze > requirement.txt <-all the packages we need in this webapp
+4.commit all the documents to a git repo
+5.heroku create a_name(get a url and a git repo on heroku)
+6.git remote -v / git push heroku master

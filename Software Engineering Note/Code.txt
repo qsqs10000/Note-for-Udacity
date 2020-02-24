@@ -1,0 +1,47 @@
+labels = list(df.columns)
+labels[0] = labels[0].replace(' ', '_')
+df.columns = labels  
+#####replace the whitespace by underscore in colnames.
+---------------------------------------------------------------------------------------
+
+median_alcohol = df.alcohol.median()
+for i, alcohol in enumerate(df.alcohol):
+#if alcohol>median then replace the element by high.
+    if alcohol >= median_alcohol:           
+        df.loc[i, 'alcohol'] = 'high'
+#if alcohol>median then replace the element by low.
+    else:
+        df.loc[i, 'alcohol'] = 'low'
+df.groupby('alcohol').quality.mean() 
+####calculate the average quality group by alcohol(high/low).
+---------------------------------------------------------------------------------------
+
+with open('books_published_last_two_years.txt') as f:
+    recent_books = f.read().split('\n')
+####open txt doc with 1 data each line
+---------------------------------------------------------------------------------------
+
+set(a).intersection(b) 
+np.intersect1d(a,b) #find duplication between a and b
+---------------------------------------------------------------------------------------
+
+Pytest: the testing file and testing function must be named with test_. Like numeric_varibale and test_numeric_variable.
+
+---------------------------------------------------------------------------------------
+
+Creating a Python Package, need __init__.py and setup.py
+
+__init__.py: from .Gaussiandistribution import Gaussian
+then we can just from distributions import Gaussian
+if __init__ is empty, we need from distributions.Gaussiandistribution import Gaussian.
+This is a shortcut.
+
+if in package folder, import sth from some module, using from .modulename import xxxx.
+
+Setup.py:from setuptools import setup
+
+setup(name='distributions',
+      version='0.1',
+      description='Gaussian distributions',
+      packages=['distributions'],
+      zip_safe=False)

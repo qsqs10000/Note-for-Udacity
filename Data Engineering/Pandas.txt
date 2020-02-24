@@ -1,0 +1,14 @@
+pd.melt(df,id_vars=[],value_vars=[])    #根据id排列组合，用value再去排列组合
+df.merge(df2,on=[],how=[])              #merge two dataframe on [] by [] method
+df.str.split(',')  			#split element by , and get a list
+df.str.split(',').str[0]    		#get the first element in the result list
+df.tolist()           			#transform a df into list
+df['x'] and df.x                        #return pd.series
+df[['x','y']]        			#return pd.DataFrame
+df[(df['Col']=='A')|(df['Col']=='B')]	#return rows of A and B
+====df[df['Col].isin(list)]		#return rows which in the given list
+series.str.replace('a','b')		#replace all 'a' in the series by 'b'
+pd.to_numeric				#transfer to numeric
+df.astype('')	df.dtype()		#transfer to '' type #check types
+df.nunique()/df.unique(return_counts=True)	#number of unique names of a column/show the unique variables
+df.str.contains()			#select rows containing xxxx.

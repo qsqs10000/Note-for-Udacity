@@ -1,0 +1,19 @@
+pd.read_csv('path',dtype=,skiprows=)   #read csv files and treat all the elements as type xxx. And skip n rows.
+
+pd.read_json('population_data.json',orient='')   #read json files with orient='',orient is the origin format of the file
+
+----------------------------------------------------------------------------------------
+SQL to Python Pandas
+import sqlite3
+import pandas as pd
+
+# connect to the database
+conn = sqlite3.connect('population_data.db')
+
+# run a query
+pd.read_sql('SELECT * FROM population_data', conn)
+pd.read_sql('SELECT "Country_Name", "Country_Code", "1960" FROM population_data', conn)
+
+
+
+df_projects.isnull().sum(axis=0/1)   #calculate the number of null values in each column,axis=0(by column),axis=1(by rows)

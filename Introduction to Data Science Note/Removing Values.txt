@@ -1,0 +1,4 @@
+df.dropna(axis=,how=,subset=) 
+#axis=0:drop all rows with missing values, axis=1 drop columns. 
+#How='any' or 'all'
+#subset=['a','b']  depending on column a and b.

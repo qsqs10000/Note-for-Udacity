@@ -1,0 +1,10 @@
+df.drop(['col']) #drop a column or row
+if we want to derive a subsets of col A and B. Use df[['A','B']] not df['A','B']
+
+df.fillna(value=)  #fill missing value with sth 
+
+df.apply(fun,axis=)  #for each col or row, apply fun. axis=0 col. axis=1 row
+
+lambda sth: ()   
+def name(sth)
+return()

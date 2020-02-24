@@ -1,0 +1,50 @@
+df.dtypes  #check the data type of each col. 
+df.select_dtypes(include=)    #Return a subset of the Dataframe's columns based on the data types.
+
+pd.get_dummies(dummy_na=,drop_first=)  #create dummy variables(dummy_na=True means create dummy for missing value as well. Drop_first is to drop the first level.)
+
+df.copy  #Make a copy of this object's indices and data.
+------------------------------------------------------------------------------------------
+
+    1. Drop the rows with missing response values
+    2. Drop columns with NaN for all the values(I will say over 75%)
+    3. Use create_dummy_df to dummy categorical columns(drop first col to avoid rank prob)
+    4. Fill the mean of the column for any missing values 
+    5. Split your data into an X matrix and a response vector y
+    6. Create training and test sets of data
+    7. Instantiate a LinearRegression model with normalized data
+    8. Fit your model to the training data
+    9. Predict the response for the training data and the test data
+    10. Obtain an rsquared value for both the training and test data
+------------------------------------------------------------------------------------------
+    #Drop the rows with missing response values
+    df  = df.dropna(subset=[response_col], axis=0)
+
+    #Drop columns with all NaN values
+    df = df.dropna(how='all', axis=1)
+
+    #Dummy categorical variables
+    df = create_dummy_df(df, cat_cols, dummy_na)
+
+    # Mean function
+    fill_mean = lambda col: col.fillna(col.mean())
+    # Fill the mean
+    df = df.apply(fill_mean, axis=0)
+
+    #Split into explanatory and response variables
+    X = df.drop(response_col, axis=1)
+    y = df[response_col]
+
+    #Split into train and test
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=rand_state)
+
+    lm_model = LinearRegression(normalize=True) # Instantiate
+    lm_model.fit(X_train, y_train) #Fit
+
+    #Predict using your model
+    y_test_preds = lm_model.predict(X_test)
+    y_train_preds = lm_model.predict(X_train)
+
+    #Score using your model
+    test_score = r2_score(y_test, y_test_preds)
+    train_score = r2_score(y_train, y_train_preds)
