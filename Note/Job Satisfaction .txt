@@ -1,2 +1,0 @@
-df.groupby(df.column).mean() #Calculate the average of every variable grouping by each value in 'column' 按'column'的种类计算每种的各个variable平均值
-.sort_values(by='',ascending=) #排序by 
